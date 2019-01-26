@@ -2,7 +2,7 @@ import root_epic from './epics'
 import root_reducer from './reducers'
 import { Action } from './actions/types'
 import { applyMiddleware, createStore, Store } from 'redux'
-import { AppState } from './state'
+import { AppState } from './interfaces'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { createEpicMiddleware } from 'redux-observable'
 

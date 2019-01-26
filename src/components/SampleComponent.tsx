@@ -1,8 +1,10 @@
 import * as React from 'react'
 import * as S from '../selectors'
 import styled from 'styled-components'
-import { AppState } from '../state'
+import { Action } from '../actions/types'
 import { connect } from 'react-redux'
+import { Dispatch } from 'redux'
+import { AppState } from '../interfaces'
 
 const Layout = styled.div`
   @media only screen and (min-device-width: 768px) {
@@ -14,6 +16,8 @@ const Layout = styled.div`
 interface STP {
   sample_prop: number
 }
+
+interface OwnProps {}
 
 interface Proptypes extends STP {
   dispatch: any
@@ -29,4 +33,9 @@ const mstp = (state: AppState): STP => ({
   sample_prop: S.sample_selector(state).foo
 })
 
-export default connect(mstp)(SampleComponent)
+const mdtp = (dispatch: Dispatch<Action>, props: OwnProps) => ({})
+
+export default connect(
+  mstp,
+  mdtp
+)(SampleComponent)

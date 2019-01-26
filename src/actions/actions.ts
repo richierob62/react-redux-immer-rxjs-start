@@ -1,6 +1,6 @@
 import * as AT from './constants'
-import { createAsyncAction, createAction } from 'typesafe-actions'
-import { SampleRecord } from '../records'
+import { createAction, createAsyncAction } from 'typesafe-actions'
+import { SampleRecord } from '../interfaces'
 
 export const SampleAction = createAction(AT.SAMPLE_ACTION, resolve => (val: number) =>
   resolve({ val })

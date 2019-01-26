@@ -1,4 +1,3 @@
-import * as R from '../records'
-import { AppState } from '../state'
+import { AppState, SampleRecord } from '../interfaces'
 
-export const sample_selector = (state: AppState): R.SampleRecord => state.sample_record
+export const sample_selector = (state: AppState): SampleRecord => state.sample_record

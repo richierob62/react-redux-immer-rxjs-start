@@ -1,16 +1,16 @@
 import * as actions from '../actions/actions'
-import { getType } from 'typesafe-actions'
-import { AppState, InitialAppState } from '../state'
 import { Action } from '../actions/types'
+import { AppState } from '../interfaces'
+import { getType } from 'typesafe-actions'
+import { InitialAppState } from '../state'
+import { produce } from 'immer'
 
-export const reducer = (state: AppState = InitialAppState, action: Action): AppState => {
-  switch (action.type) {
-    case getType(actions.SampleAction):
-      return state.setIn(['sample_record'], action.payload.val)
-
-    default:
-      return state
-  }
-}
+export const reducer = (state: AppState = InitialAppState, action: Action): AppState =>
+  produce(state, draft => {
+    switch (action.type) {
+      case getType(actions.SampleAction):
+        draft.sample_record.foo = action.payload.val
+    }
+  })
 
 export default reducer

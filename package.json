@@ -14,7 +14,7 @@
     "typesafe-actions": "^3.0.0"
   },
   "dependencies": {
-    "immutable": "^4.0.0-rc.12",
+    "immer": "^1.12.1",
     "moment": "^2.23.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
